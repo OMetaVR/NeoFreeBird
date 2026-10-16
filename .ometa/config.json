@@ -5,10 +5,17 @@
     "name": "X",
     "bundleId": "com.atebits.Tweetie2",
     "appStoreId": 333903271,
-    "version": { "from": "upstream-asset", "regex": "-X_[0-9.]+_([0-9.]+)\\.ipa$" }
+    "version": {
+      "from": "fixed",
+      "version": "12.35",
+      "upstreamTargets": "12.31.1 (from upstream's release assets)"
+    }
   },
   "cache": {
-    "paths": ["deps/ffmpeg-kit-next/build", ".ometa-ffmpeg-build"],
+    "paths": [
+      "deps/ffmpeg-kit-next/build",
+      ".ometa-ffmpeg-build"
+    ],
     "key": "echo ffmpeg-$(git rev-parse --short HEAD:deps/ffmpeg-kit-next/upstream)-$(shasum deps/ffmpeg-kit-next/build-ffmpeg.sh | cut -c1-12)-$(xcrun --sdk iphoneos --show-sdk-version)"
   }
 }
